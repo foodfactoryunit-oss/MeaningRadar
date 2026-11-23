@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Materi 3.4 — Meaning Radar: Cek & Ricek Pemahaman Tim</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap">
+<style>
+:root{--bg:#FBF8F1;--card:#fff;--ink:#1d2340;--mute:#5b6384;--ind:#2F3FBF;--indl:#e6e9ff;--sage:#8FBFA4;--mint:#e3f4ea;--mintd:#1f7a4d;--coral:#FF7A66;--coral-l:#ffe9e5;--amb:#F5B942;--amb-l:#fff3d6;--line:#e4dfd2;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:500 16px/1.55 'Plus Jakarta Sans',system-ui,'Segoe UI',sans-serif;min-height:100vh;display:flex;flex-direction:column}
+h1,h2,h3{font-family:'Bricolage Grotesque','Trebuchet MS',system-ui,sans-serif;margin:0;line-height:1.15}
+main{flex:1;width:100%;max-width:1040px;margin:0 auto;padding:18px 16px 28px}
+footer{text-align:center;padding:16px;font-size:13px;color:var(--mute);border-top:2px solid var(--line);background:#fff}
+.card{background:var(--card);border:2px solid var(--ink);border-radius:22px;padding:20px;box-shadow:5px 5px 0 var(--ink)}
+.grid{display:grid;gap:16px}
+.hero{grid-template-columns:1.1fr .9fr;align-items:stretch}
+@media(max-width:760px){.hero{grid-template-columns:1fr}}
+.hero h1{font-size:clamp(28px,5vw,44px);font-weight:800;color:var(--ind)}
+.hook{background:var(--amb-l);border-left:6px solid var(--amb);padding:12px 14px;border-radius:12px;margin:14px 0;font-size:15px}
+label{display:block;font-weight:700;font-size:14px;margin:12px 0 4px}
+input[type=text]{width:100%;padding:12px 14px;border:2px solid var(--ink);border-radius:14px;font:inherit;background:#fff}
+input:focus,button:focus-visible{outline:3px solid var(--amb);outline-offset:2px}
+.err{color:#b3261e;font-size:13px;font-weight:700;min-height:18px;margin-top:4px}
+.sc{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px}
+@media(max-width:520px){.sc{grid-template-columns:1fr}}
+.opt{text-align:left;border:2px solid var(--line);background:#fff;border-radius:16px;padding:12px;cursor:pointer;font:inherit;color:inherit;transition:transform .15s,border-color .15s}
+.opt:hover{transform:translateY(-2px)}
+.opt.on{border-color:var(--ind);background:var(--indl)}
+.opt b{display:block;font-size:14px;color:var(--ind)}.opt span{font-size:13px;color:var(--mute)}
+.btn{border:2px solid var(--ink);background:var(--coral);color:#fff;font:700 16px 'Plus Jakarta Sans',system-ui,sans-serif;padding:12px 22px;border-radius:999px;cursor:pointer;box-shadow:3px 3px 0 var(--ink);transition:transform .12s,box-shadow .12s}
+.btn:hover{transform:translate(-1px,-1px);box-shadow:5px 5px 0 var(--ink)}
+.btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+.btn.alt{background:var(--ind)}.btn.ghost{background:#fff;color:var(--ink)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--card);border:2px solid var(--ink);border-radius:20px;padding:12px 14px;margin-bottom:16px;display:grid;grid-template-columns:1.2fr 3fr;gap:12px}
+@media(max-width:760px){.top{grid-template-columns:1fr}}
+.who{font-size:13px;line-height:1.35}.who b{font-size:15px}
+.ind3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.mt{font-size:12px;color:var(--mute);font-weight:700}.mt strong{display:block;font-size:20px;color:var(--ink);font-family:'Bricolage Grotesque',system-ui,sans-serif}
+.bar{height:8px;background:var(--line);border-radius:9px;overflow:hidden}.bar i{display:block;height:100%;width:0;border-radius:9px;transition:width .7s}
+.steps{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap}
+.pill{padding:6px 12px;border-radius:999px;border:2px solid var(--line);font-size:13px;font-weight:700;color:var(--mute);background:#fff}
+.pill.on{border-color:var(--ind);background:var(--ind);color:#fff}.pill.done{background:var(--mint);border-color:var(--sage);color:var(--mintd)}
+.two{grid-template-columns:1fr 1fr}@media(max-width:760px){.two{grid-template-columns:1fr}}
+.brief{background:var(--indl);border-radius:16px;padding:14px;font-size:15px}
+.bubble{border-radius:18px;padding:12px 14px;margin-top:12px;background:var(--amb-l);border:2px dashed var(--amb)}
+.tag{display:inline-block;font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px;background:var(--coral-l);color:#b3392a;margin-top:6px}
+.sent{font-size:18px;line-height:2.3;margin:10px 0}
+.slot{display:inline-block;min-width:110px;padding:2px 12px;border:2px dashed var(--ind);border-radius:12px;background:var(--indl);color:var(--ind);font-weight:700;font-size:15px;cursor:pointer;line-height:1.5;vertical-align:middle}
+.slot.f{border-style:solid;background:var(--ind);color:#fff}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 12px}
+.chip{border:2px solid var(--ink);background:#fff;border-radius:999px;padding:6px 14px;font:600 14px 'Plus Jakarta Sans',system-ui,sans-serif;cursor:pointer;transition:transform .12s,background .12s}
+.chip:hover{transform:translateY(-2px);background:var(--amb-l)}.chip.used{background:var(--ind);color:#fff}
+.cl{font-size:13px;font-weight:700;color:var(--mute)}
+.dots span{display:inline-block;width:8px;height:8px;margin-right:4px;border-radius:50%;background:var(--amb);animation:b 1s infinite}
+.dots span:nth-child(2){animation-delay:.15s}.dots span:nth-child(3){animation-delay:.3s}
+@keyframes b{50%{transform:translateY(-6px)}}
+.fb{margin-top:12px;border-radius:16px;padding:12px 14px;animation:pop .4s}
+@keyframes pop{from{opacity:0;transform:scale(.97)}}
+.fb.g{background:var(--mint);border:2px solid var(--sage)}.fb.m{background:var(--amb-l);border:2px solid var(--amb)}.fb.r{background:var(--coral-l);border:2px solid var(--coral)}
+.rb{font-size:18px;line-height:2.2}
+.ph{padding:2px 4px;border-radius:8px;cursor:pointer;border-bottom:3px dotted var(--line);transition:background .12s}
+.ph:hover{background:var(--indl)}.ph.fl{background:var(--amb);border-bottom-color:var(--ink);font-weight:700}
+.ph.hit{background:var(--mint);border-bottom:3px solid var(--mintd);cursor:default}.ph.miss{background:var(--coral-l);border-bottom:3px solid var(--coral);cursor:default}.ph.fal{background:var(--indl);border-bottom:3px solid var(--ind);cursor:default}
+.leg{display:flex;gap:10px;flex-wrap:wrap;font-size:12px;font-weight:700;margin:6px 0}
+.dep{display:flex;justify-content:space-between;align-items:center;gap:10px;border:2px solid var(--line);border-radius:14px;padding:10px 12px;margin-bottom:8px;cursor:pointer;background:#fff;width:100%;font:inherit;color:inherit;text-align:left}
+.dep.on{border-color:var(--ind);background:var(--indl)}
+.sw{width:44px;height:24px;border-radius:99px;background:var(--line);position:relative;flex:none;transition:background .2s}
+.sw::after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;transition:left .2s}
+.dep.on .sw{background:var(--ind)}.dep.on .sw::after{left:23px}
+.vo{display:block;width:100%;text-align:left;border:2px solid var(--line);background:#fff;border-radius:16px;padding:12px;margin-bottom:8px;font:inherit;color:inherit;cursor:pointer}
+.vo.on{border-color:var(--mintd);background:var(--mint)}
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}@media(max-width:560px){.cmp{grid-template-columns:1fr}}
+.cmp>div{border-radius:14px;padding:10px 12px;font-size:14px}.no{background:var(--coral-l);border:2px solid var(--coral)}.ye{background:var(--mint);border:2px solid var(--sage)}
+.cmp b{display:block;font-size:12px;margin-bottom:2px}
+.svgw{border-radius:18px;overflow:hidden;background:var(--mint);border:2px solid var(--ink)}
+.big{font-size:34px;font-weight:800;color:var(--ind);font-family:'Bricolage Grotesque',system-ui,sans-serif}
+.sum3{grid-template-columns:repeat(3,1fr)}@media(max-width:620px){.sum3{grid-template-columns:1fr}}
+ul.ch{padding-left:20px}ul.ch li{margin-bottom:6px}
+.mute{position:fixed;right:12px;bottom:calc(64px + env(safe-area-inset-bottom,0px));z-index:9;border:2px solid var(--ink);background:var(--amb);color:var(--ink);border-radius:999px;padding:8px 14px;font:700 13px 'Plus Jakarta Sans',system-ui,sans-serif;cursor:pointer;box-shadow:2px 2px 0 var(--ink)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main id="app"></main>
+<button id="mute" class="mute" type="button" aria-label="Nyalakan atau matikan suara">🔊 Suara: Nyala</button>
+<footer>Education &amp; Training Department - Food Beverage Industry (2026)</footer>
+<script>
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const ART=`<svg viewBox="0 0 320 210" role="img" aria-label="Ruang briefing pabrik roti: papan checklist, rak loyang roti, clipboard dan dua rekan kerja"><rect width="320" height="210" fill="#e3f4ea"/><rect x="18" y="16" width="130" height="84" rx="10" fill="#fff" stroke="#1d2340" stroke-width="3"/><g stroke="#2F3FBF" stroke-width="3" fill="none" stroke-linecap="round"><path d="M32 38l6 6 10-12"/><path d="M32 62l6 6 10-12"/></g><g stroke="#cfc9b8" stroke-width="5" stroke-linecap="round"><path d="M60 38h74M60 62h60M60 84h40"/></g><circle cx="122" cy="84" r="8" fill="#FF7A66"/><path d="M118 84l3 3 5-6" stroke="#fff" stroke-width="2" fill="none"/><g transform="translate(212 20)"><rect width="92" height="124" rx="6" fill="#fff" stroke="#1d2340" stroke-width="3"/><g stroke="#1d2340" stroke-width="3"><path d="M0 32h92M0 62h92M0 92h92"/></g><g fill="#F5B942" stroke="#1d2340" stroke-width="2"><ellipse cx="20" cy="24" rx="12" ry="7"/><ellipse cx="48" cy="24" rx="12" ry="7"/><ellipse cx="74" cy="24" rx="12" ry="7"/><ellipse cx="30" cy="54" rx="12" ry="7"/><ellipse cx="62" cy="54" rx="12" ry="7"/><ellipse cx="20" cy="84" rx="12" ry="7"/><ellipse cx="48" cy="84" rx="12" ry="7"/><ellipse cx="74" cy="84" rx="12" ry="7"/></g></g><rect x="0" y="168" width="320" height="42" fill="#2F3FBF"/><g><circle cx="80" cy="120" r="20" fill="#f2c6a0" stroke="#1d2340" stroke-width="3"/><path d="M60 116a20 20 0 0140 0c-8-8-30-10-40 0z" fill="#1d2340"/><rect x="52" y="142" width="56" height="40" rx="16" fill="#FF7A66" stroke="#1d2340" stroke-width="3"/><g fill="#fff"><circle cx="68" cy="158" r="3"/><circle cx="82" cy="164" r="3"/><circle cx="94" cy="156" r="3"/></g></g><g><circle cx="170" cy="126" r="19" fill="#d9a67a" stroke="#1d2340" stroke-width="3"/><path d="M151 122a19 19 0 0138 0c-6-10-32-10-38 0z" fill="#1d2340"/><rect x="144" y="146" width="52" height="36" rx="16" fill="#F5B942" stroke="#1d2340" stroke-width="3"/></g><g transform="translate(200 128) rotate(8)"><rect width="42" height="52" rx="5" fill="#fff" stroke="#1d2340" stroke-width="3"/><rect x="12" y="-4" width="18" height="9" rx="3" fill="#1d2340"/><g stroke="#1f7a4d" stroke-width="3" fill="none" stroke-linecap="round"><path d="M8 18l4 4 8-9M8 36l4 4 8-9"/></g></g><g stroke="#2F3FBF" stroke-width="3" fill="none" stroke-linecap="round"><path d="M126 96a14 14 0 0120 0M120 88a24 24 0 0132 0"/></g></svg>`;
+const CH={
+slots:[
+{l:'Pembuka',o:[['Boleh ulangi dengan kata-katamu sendiri',2],['Sudah paham ya?',0],['Tolong catat semua poin tadi',1],['Pastikan kamu tidak salah',0]]},
+{l:'Isi yang diminta',o:[['apa yang akan kamu kerjakan, urutannya, dan batas waktunya',2],['bagian mana yang menurutmu paling penting',1],['kalau bingung, bilang saja',1],['saya anggap semua sudah beres',0]]},
+{l:'Penutup',o:[['Ini untuk memastikan penjelasan saya tertangkap.',2],['Kamu pasti sudah dengar jelas tadi.',0],['Biar cepat saja.',1]]}]};
+const SC={
+1:{n:'Kasus 1: Prioritas Shift & Kuota Awal',who:'Pak Rudi (Supervisor Produksi)',
+brief:'Kamu baru menjelaskan: Shift 2 mulai pukul 14.00. Produksi roti tawar 1.200 pcs lebih dulu, baru roti manis 800 pcs. Kuota roti tawar harus siap sebelum pukul 20.00.',
+rb:[['Oke Pak, shift 2 mulai ',0],['jam 15.00',1,'Shift 2 mulai pukul 14.00.','Lini terlambat panas, kuota 1.200 pcs meleset dari jam 20.00.'],[', saya mulai dari ',0],['roti manis 800 pcs dulu',1,'Roti tawar 1.200 pcs harus didahulukan.','Stok roti tawar kurang saat truk berangkat, toko menagih kiriman ulang.'],[', lalu roti tawar 1.200 pcs, ',0],['kuota boleh selesai besok pagi',1,'Kuota harus siap sebelum pukul 20.00.','Pengiriman malam tertunda dan lembur tidak terencana.'],[' dan saya laporkan ke Admin Pabrik setelah selesai.',0]],
+v:['Terima kasih sudah mengulang, Pak. Biar kita searah, saya luruskan ya: mulai 14.00, roti tawar 1.200 pcs dulu, kuota siap sebelum 20.00. Boleh ulangi sekali lagi supaya saya yakin penjelasan saya sudah jelas?','Hampir benar kok, nanti kamu sesuaikan sendiri saja ya.','Kamu salah dengar lagi. Padahal tadi sudah jelas, tolong lebih fokus.'],
+d:{'Production & Engineering':['Lini roti manis jalan duluan, mesin roti tawar telat panas, kuota meleset dan re-work lembur.','Urutan dan jam mulai diulang benar, lini siap 14.00 dan kuota aman.'],'Marketing':0,'Sales & Distribution':['Truk berangkat dengan roti tawar kurang, toko minta kirim ulang.','Sales dapat jam siap yang pasti dan janji ke toko akurat.'],'QA & RnD':0,'Factory Administration':['Rencana lembur dan catatan output salah jam, laporan harus direvisi.','Jadwal shift, lembur, dan laporan tercatat sesuai kesepakatan.']}},
+2:{n:'Kasus 2: Validasi Kemasan, Klaim & Jadwal Kirim',who:'Bu Sari (PIC Kemasan)',
+brief:'Kamu baru menjelaskan: Kemasan baru roti sobek harus lolos cek QA sebelum dikirim. Label “tanpa pengawet” hanya boleh dipakai setelah hasil RnD terbit. Kirim ke distributor Bandung hari Kamis pukul 06.00.',
+rb:[['Siap Bu, ',0],['kemasan baru langsung dikirim saja',1,'Kemasan harus lolos cek QA dulu.','Kemasan tak sesuai spesifikasi lolos, satu batch ditahan dan dikemas ulang.'],[' karena sudah dicetak, ',0],['label “tanpa pengawet” boleh terpasang sekarang',1,'Label hanya boleh dipakai setelah hasil RnD terbit.','Klaim tanpa dasar uji berisiko komplain dan tarik produk.'],[', jadwal kirim ke Bandung ',0],['hari Jumat',1,'Jadwal kirim hari Kamis pukul 06.00.','Distributor menerima barang telat, janji ke toko meleset.'],[' pagi, dan saya kabari Sales soal stoknya.',0]],
+v:['Terima kasih sudah mengulang, Bu. Biar kita searah, saya luruskan: kemasan lolos QA dulu, label “tanpa pengawet” menunggu hasil RnD, kirim Kamis 06.00. Boleh ulangi lagi supaya saya yakin penjelasan saya tertangkap?','Hampir benar, nanti kita lihat saja bagaimana jalannya.','Ini sudah saya bilang tadi. Jangan sampai salah lagi.'],
+d:{'Production & Engineering':['Kemasan belum lolos QA ikut masuk lini, batch ditahan dan dikemas ulang.','Lini hanya mengemas kemasan yang sudah disetujui QA.'],'Marketing':['Klaim “tanpa pengawet” terpasang sebelum hasil RnD, materi promosi ditarik.','Klaim ditahan sampai hasil RnD terbit, materi promosi aman.'],'Sales & Distribution':['Bandung menerima hari Jumat, bukan Kamis, janji ke toko meleset.','Kamis 06.00 terkonfirmasi, janji ke Bandung terjaga.'],'QA & RnD':['Kemasan lolos tanpa cek dan klaim tanpa dasar uji, produk berisiko ditarik.','Cek kemasan dan verifikasi klaim berjalan sebelum kirim.'],'Factory Administration':0}}};
+const DEPTS=['Production & Engineering','Marketing','Sales & Distribution','QA & RnD','Factory Administration'];
+let S={};
+function reset(keep){const k=keep||{};S={nik:k.nik||'',nama:k.nama||'',sc:k.sc||1,step:0,sel:[null,null,null],l1:0,p1:0,fl:new Set(),l2:0,hit:0,fa:0,v:null,dp:{},l3:0,ok3:0,valid:0,det:0,ready:20,sim:0}}
+const A=()=>SC[S.sc];
+function home(){const a=$('#app');a.innerHTML=`<div class="grid hero"><section class="card"><h1>Materi 3.4 — Meaning Radar: Cek &amp; Ricek Pemahaman Tim</h1><p style="margin:6px 0;color:var(--mute);font-weight:700">Misi 3 · 3-Way Communication · Junior Manager, Pabrik Roti</p><div class="hook">Sudah menjelaskan panjang lebar, tapi hasil pekerjaan tim malah tidak sesuai harapan? Sering kali masalahnya ada di kata “Siap, jelas!” yang menyembunyikan tafsir berbeda.</div><label for="nm">Nama</label><input id="nm" type="text" autocomplete="off" value="${esc(S.nama)}" placeholder="Nama lengkap"><div class="err" id="e2"></div><label for="nik">NIK</label><input id="nik" type="text" autocomplete="off" value="${esc(S.nik)}" placeholder="Contoh: 2026-0145"><div class="err" id="e1"></div><label>Pilih skenario</label><div class="sc"><button class="opt ${S.sc==1?'on':''}" data-sc="1"><b>Kasus 1</b><span>Prioritas Shift &amp; Kuota Awal</span></button><button class="opt ${S.sc==2?'on':''}" data-sc="2"><b>Kasus 2</b><span>Validasi Kemasan, Klaim &amp; Jadwal Kirim</span></button></div><p style="margin:16px 0 0"><button class="btn" id="go">Mulai Misi Radar</button></p></section><section class="card" style="display:flex;flex-direction:column;gap:12px"><div class="svgw">${ART}</div><div style="font-size:14px;color:var(--mute)">Kamu adalah Junior Manager. Tugasmu: pastikan pesanmu benar-benar dipahami, bukan hanya diiyakan, lewat Send, Repeat Back, dan Verify.</div></section></div>`;
+a.querySelectorAll('[data-sc]').forEach(b=>b.onclick=()=>{S.sc=+b.dataset.sc;S.nik=$('#nik').value;S.nama=$('#nm').value;home()});
+$('#go').onclick=()=>{const n=$('#nik').value.trim(),m=$('#nm').value.trim();$('#e1').textContent=n?'':'NIK wajib diisi sebelum memulai misi.';$('#e2').textContent=m?'':'Nama wajib diisi sebelum memulai misi.';if(n&&m){S.nik=n;S.nama=m;S.step=1;S.valid=0;S.det=0;S.ready=20;game()}}}
+function game(anim){const a=$('#app');
+a.innerHTML=`<div class="top"><div class="who"><b>${esc(S.nama)}</b><br>NIK ${esc(S.nik)}<br><span style="color:var(--ind);font-weight:700">${esc(A().n)}</span></div><div class="ind3">${[['Validasi Repeat Back','mv','#2F3FBF','%'],['Ketepatan Deteksi &amp; Verify','md','#1f7a4d','%'],['Kesiapan Eksekusi Tim','mr','#FF7A66','']].map(m=>`<div><div class="mt">${m[0]}<strong id="${m[1]}t">0${m[3]}</strong></div><div class="bar"><i id="${m[1]}b" style="background:${m[2]}"></i></div></div>`).join('')}</div></div><div class="steps">${['Ganti “Sudah Paham?”','Tangkap Paham Semu','Verify &amp; Dampak'].map((t,i)=>`<span class="pill ${S.step==i+1?'on':S.step>i+1?'done':''}">${i+1}. ${t}</span>`).join('')}</div><div id="stage"></div>`;
+upd();[cp1,cp2,cp3][S.step-1]()}
+function upd(){const set=(k,v,u)=>{const t=$('#'+k+'t'),b=$('#'+k+'b');if(t){t.textContent=v+u;b.style.width=v+'%'}};setTimeout(()=>{set('mv',S.valid,'%');set('md',S.det,'%');set('mr',S.ready,'')},30)}
+function cp1(){const st=$('#stage'),a=A();const full=S.sel.every(x=>x!==null);
+const sl=S.sel.map((s,i)=>`<span class="slot ${s!==null?'f':''}" data-s="${i}" title="Klik untuk mengosongkan">${s!==null?esc(CH.slots[i].o[s][0]):'… '+CH.slots[i].l+' …'}</span>`);
+st.innerHTML=`<div class="grid two"><section class="card"><h2 style="font-size:22px">Checkpoint 1 — Ganti “Sudah Paham?”</h2><div class="brief" style="margin-top:12px">${esc(a.brief)}</div><div class="bubble"><b>${esc(a.who)}:</b> “Siap, jelas kok!”<br><span class="tag">Status: Fake Confirmation / Paham Semu</span></div><p style="font-size:14px;color:var(--mute)">Jawaban “jelas” belum membuktikan apa pun. Susun kalimat pengecekan yang membuat PIC menguraikan pemahamannya sendiri.</p></section><section class="card"><div class="sent">${sl[0]} ${sl[1]}. ${sl[2]}</div>${CH.slots.map((g,i)=>`<div class="cl">${g.l}</div><div class="chips">${g.o.map((o,j)=>`<button class="chip ${S.sel[i]===j?'used':''}" data-i="${i}" data-j="${j}" ${S.l1?'disabled':''}>${esc(o[0])}</button>`).join('')}</div>`).join('')}<button class="btn alt" id="snd" ${S.l1?'disabled':''}>Kirim Pertanyaan Cek</button><div class="err" id="m1">${full||S.l1?'':'Lengkapi ketiga slot dulu sebelum mengirim.'}</div><div id="res"></div></section></div>`;
+if(S.l1){res1(false)}
+st.querySelectorAll('.chip').forEach(c=>c.onclick=()=>{if(S.l1)return;S.sel[+c.dataset.i]=+c.dataset.j;cp1()});
+st.querySelectorAll('.slot').forEach(c=>c.onclick=()=>{if(S.l1)return;S.sel[+c.dataset.s]=null;cp1()});
+$('#snd').onclick=()=>{if(!S.sel.every(x=>x!==null)){$('#m1').textContent='Lengkapi ketiga slot dulu sebelum mengirim.';return}
+S.l1=1;S.p1=S.sel.reduce((t,s,i)=>t+CH.slots[i].o[s][1],0);S.valid=Math.round(S.p1/6*100);S.ready=20+S.p1*5;upd();cp1()}}
+function res1(){const a=A(),p=S.p1,good=p>=5,mid=p>=3&&p<5;const rep=good?`“Oh iya, saya ulangi ya. Ada hal yang saya belum yakin, boleh saya sebutkan dulu urutan dan jamnya…”`:mid?`“Hmm, intinya sesuai arahan Bapak/Ibu, kok. Kurang lebih begitu…”`:`“Ya, siap, saya kerjakan sesuai arahan.” (belum ada isi yang bisa dicek)`;
+const why=good?'Efektif. Kamu meminta repeat back dengan kata-kata sendiri, menyebut isi konkret (urutan, waktu, jumlah), dan memosisikan cek sebagai tanggung jawab pemberi pesan. Inilah true validation dalam 3-Way Communication.':mid?'Cukup. Ada unsur pengecekan, tetapi masih ada slot yang terlalu longgar atau tidak meminta isi konkret, sehingga PIC bisa menjawab sekadarnya.':'Kurang efektif. Pertanyaan tertutup atau bernada menghakimi mudah dijawab “iya”, sehingga paham semu tetap tersembunyi.';
+$('#res').innerHTML=`<div class="bubble" id="ans"><div class="dots"><span></span><span></span><span></span></div></div>`;
+setTimeout(()=>{const e=$('#ans');if(!e)return;e.innerHTML=`<b>${esc(a.who)}:</b> ${rep}`;$('#res').insertAdjacentHTML('beforeend',`<div class="fb ${good?'g':mid?'m':'r'}"><b>Skor frasa: ${p}/6.</b> ${why}</div>${good?'<p><button class="btn" id="n1">Lanjut ke Checkpoint 2</button></p>':'<p><b>Belum cukup efektif.</b> Susun ulang kalimatmu sampai skor minimal 5/6 untuk bisa lanjut.</p><p><button class="btn" id="rt1">Coba Lagi</button></p>'}`);play(good?'ok':'bad');const n=$('#n1'),r=$('#rt1');if(n)n.onclick=()=>{S.step=2;game()};if(r)r.onclick=()=>{S.sel=[null,null,null];S.l1=0;S.p1=0;cp1()}},900)}
+function cp2(){const st=$('#stage'),a=A();
+st.innerHTML=`<section class="card"><h2 style="font-size:22px">Checkpoint 2 — Tangkap “Paham Semu”</h2><p style="color:var(--mute);font-size:14px">${esc(a.who)} mengulang arahanmu dengan penuh percaya diri. Klik frasa yang menurutmu meleset dari brief, lalu kunci.</p><div class="brief" style="font-size:14px"><b>Brief asli:</b> ${esc(a.brief.replace('Kamu baru menjelaskan: ',''))}</div><div class="bubble"><div class="rb">${a.rb.map((r,i)=>`<span class="ph" data-k="${i}" role="button" tabindex="0">${esc(r[0])}</span>`).join('')}</div></div><div class="leg" id="lg"></div><p><button class="btn" id="lk">Kunci Flag</button> <span class="err" id="m2"></span></p><div id="r2"></div></section>`;
+const paint=()=>st.querySelectorAll('.ph').forEach(p=>{const k=+p.dataset.k,seg=a.rb[k],f=S.fl.has(k);if(S.l2){const c=seg[1]?(f?'hit':(S.perf?'miss':'')):(f?'fal':'');p.className='ph '+c}else p.className='ph'+(f?' fl':'')});
+const tg=p=>{if(S.l2)return;const k=+p.dataset.k;S.fl.has(k)?S.fl.delete(k):S.fl.add(k);paint()};
+st.querySelectorAll('.ph').forEach(p=>{p.onclick=()=>tg(p);p.onkeydown=e=>{if(e.key=='Enter'||e.key==' '){e.preventDefault();tg(p)}}});
+const fin=()=>{paint();$('#lg').innerHTML='<span style="color:#1f7a4d">Hijau: miskonsepsi tertangkap</span><span style="color:#b3392a">Coral: miskonsepsi terlewat</span><span style="color:var(--ind)">Biru: sebenarnya sudah tepat</span>';const w=a.rb.map((r,i)=>[r,i]).filter(x=>x[0][1]);S.perf=S.hit==w.length&&!S.fa;paint();play(S.perf?'ok':'bad');
+$('#r2').innerHTML=`<div class="fb ${S.hit==w.length&&!S.fa?'g':S.hit?'m':'r'}"><b>Tertangkap ${S.hit} dari ${w.length}${S.fa?`, salah tandai ${S.fa} frasa yang sebenarnya tepat`:''}.</b></div>`+(S.perf?w:[]).map(([r,i])=>`<div class="fb ${S.fl.has(i)?'g':'r'}" style="margin-top:8px"><b>“${esc(r[0].trim())}”</b> ${S.fl.has(i)?'(tertangkap)':'(terlewat)'}<br>Seharusnya: ${esc(r[2])}<br>Dampak bila dibiarkan: ${esc(r[3])}</div>`).join('')+(S.perf?`<p><button class="btn" id="n2">Lanjut ke Checkpoint 3</button></p>`:`<div class="fb m" style="margin-top:8px">Belum tepat. Hijau berarti tandamu benar, biru berarti frasa itu sebenarnya sudah tepat. Perbaiki tandamu lalu coba lagi.</div><p><button class="btn" id="rt2">Coba Lagi</button></p>`);const n=$('#n2'),r=$('#rt2');if(n)n.onclick=()=>{S.step=3;game()};if(r)r.onclick=()=>{S.fl=new Set();S.l2=0;S.perf=0;cp2()}};
+if(S.l2){fin();$('#lk').disabled=true}
+$('#lk').onclick=()=>{if(S.l2)return;if(!S.fl.size){$('#m2').textContent='Tandai minimal satu frasa dulu.';return}
+const w=a.rb.filter(r=>r[1]).length;S.hit=0;S.fa=0;a.rb.forEach((r,i)=>{if(S.fl.has(i)){r[1]?S.hit++:S.fa++}});S.l2=1;S.det=Math.max(0,Math.round((S.hit-S.fa*.5)/w*100));S.ready=Math.min(100,20+S.p1*5+Math.round(S.det*.25));upd();$('#lk').disabled=true;fin()}}
+function cp3(){const st=$('#stage'),a=A();
+st.innerHTML=`<div class="grid two"><section class="card"><h2 style="font-size:22px">Checkpoint 3 — Verify Suportif</h2><p style="color:var(--mute);font-size:14px">Pilih kalimat yang meluruskan miskonsepsi dengan jelas sambil menjaga trust tim.</p>${a.v.map((t,i)=>`<button class="vo ${S.v===i?'on':''}" data-v="${i}" ${S.l3?'disabled':''}>${esc(t)}</button>`).join('')}</section><section class="card"><h3 style="font-size:20px;margin-bottom:6px">Departemen yang terdampak</h3><p style="color:var(--mute);font-size:14px;margin-top:0">Aktifkan departemen yang terkena miskonsepsi tadi.</p>${DEPTS.map(d=>`<button class="dep ${S.dp[d]?'on':''}" data-d="${esc(d)}" ${S.l3?'disabled':''}><span>${esc(d)}</span><span class="sw"></span></button>`).join('')}<button class="btn alt" id="sim" ${S.l3?'disabled':''}>Jalankan Simulasi Dampak</button><div class="err" id="m3"></div></section></div><div id="r3"></div>`;
+st.querySelectorAll('.vo').forEach(b=>b.onclick=()=>{S.v=+b.dataset.v;cp3()});
+st.querySelectorAll('.dep').forEach(b=>b.onclick=()=>{S.dp[b.dataset.d]=!S.dp[b.dataset.d];cp3()});
+if(S.l3)sim();
+$('#sim').onclick=()=>{if(S.v===null){$('#m3').textContent='Pilih satu kalimat Verify dulu.';return}
+const vp=[2,0,1][S.v];let ok=0;DEPTS.forEach(d=>{if(!!a.d[d]===!!S.dp[d])ok++});S.ok3=ok;S.l3=1;const dep=Math.round(ok/5*100);S.det=Math.round((S.det*2+ (vp/2*100)*1+dep*1)/4);S.ready=Math.min(100,20+S.p1*5+Math.round(S.hit/a.rb.filter(r=>r[1]).length*25)+vp*6+Math.round(ok/5*15));S.vp=vp;upd();cp3()}}
+function sim(){const a=A(),vp=[2,0,1][S.v];const fb=vp==2?['g','Verify yang kuat: spesifik, tidak menyalahkan, dan meminta repeat back ulang. Trust tim terjaga.']:vp==1?['m','Verify kurang tegas. Tidak ada koreksi spesifik, miskonsepsi masih bisa lolos.']:['r','Verify menyalahkan. Koreksi ada, tetapi PIC cenderung diam dan makin enggan jujur.'];
+const aff=DEPTS.filter(d=>a.d[d]);const perf=vp==2&&S.ok3==5;play(perf?'ok':'bad');if(!perf){$('#r3').innerHTML=`<div class="fb ${fb[0]}" style="margin-top:16px"><b>Hasil Verify:</b> ${fb[1]}</div><div class="fb m" style="margin-top:12px"><b>Penilaian departemen: ${S.ok3}/5 tepat.</b> Belum sempurna. Pilih kalimat Verify yang paling suportif dan spesifik, lalu cek ulang departemen yang benar-benar terdampak.</div><p><button class="btn" id="rt3">Coba Lagi</button></p>`;$('#rt3').onclick=()=>{S.v=null;S.dp={};S.l3=0;cp3()};return}
+$('#r3').innerHTML=`<div class="fb ${fb[0]}" style="margin-top:16px"><b>Hasil Verify:</b> ${fb[1]}</div><section class="card" style="margin-top:16px"><h3 style="font-size:20px">Simulasi dampak: ${S.ok3}/5 penilaian departemen tepat</h3>${aff.map(d=>`<div style="margin-top:12px"><b>${esc(d)}</b> ${S.dp[d]?'':'<span class="tag">kamu belum mengaktifkan</span>'}<div class="cmp"><div class="no"><b>Tanpa Cek &amp; Ricek (risiko re-work / salah kirim)</b>${esc(a.d[d][0])}</div><div class="ye"><b>Dengan 3-Way Communication (Send, Repeat Back, Verify)</b>${esc(a.d[d][1])}</div></div></div>`).join('')}${DEPTS.filter(d=>S.dp[d]&&!a.d[d]).map(d=>`<p class="fb m"><b>${esc(d)}:</b> tidak terdampak langsung pada kasus ini.</p>`).join('')}<p><button class="btn" id="fin">Lihat Ringkasan</button></p></section>`;$('#fin').onclick=()=>{S.step=4;summary()}}
+function summary(){const a=A();play('win');const m=[['Validasi Repeat Back',S.valid,'Kamu piawai menyusun pertanyaan cek yang meminta PIC menguraikan pemahamannya sendiri.','Latih menyusun kalimat cek yang terbuka, konkret, dan tidak menghakimi.'],['Ketepatan Deteksi & Verify',S.det,'Kamu jeli menangkap frasa miskonsepsi dan meluruskannya dengan jelas.','Latih mendeteksi frasa yang meleset (waktu, kuota, urutan, klaim) dan meluruskannya secara spesifik.'],['Kesiapan Eksekusi Tim',S.ready,'Kamu menjaga tim tetap searah dari briefing hingga eksekusi.','Latih menutup siklus dengan repeat back ulang agar semua departemen siap eksekusi.']];
+const hi=m.reduce((x,y)=>y[1]>x[1]?y:x),lo=m.reduce((x,y)=>y[1]<x[1]?y:x);
+$('#app').innerHTML=`<section class="card"><h1 style="color:var(--ind);font-size:clamp(26px,4vw,38px)">Misi selesai, ${esc(S.nama)}</h1><p style="color:var(--mute);font-weight:700">NIK ${esc(S.nik)} · ${esc(a.n)}</p><div class="grid sum3" style="margin:16px 0">${m.map((x,i)=>`<div class="brief"><div class="mt">${x[0]}</div><div class="big">${x[1]}${i<2?'%':' / 100'}</div></div>`).join('')}</div><div class="grid two"><div class="fb g" style="margin:0"><b>Kekuatan utama: ${esc(hi[0])}</b><br>${hi[2]}</div><div class="fb m" style="margin:0"><b>Area latihan: ${esc(lo[0])}</b><br>${lo[3]}</div></div><h3 style="margin:20px 0 6px">Challenge harian</h3><ul class="ch"><li>Ganti “Sudah paham ya?” dengan “Boleh ulangi dengan kata-katamu sendiri?”</li><li>Terapkan 3-Way Communication (Send, Repeat Back, Verify) pada setiap delegasi harian.</li><li>Koreksi miskonsepsi dengan empati: sebut yang sudah benar, luruskan yang meleset, lalu minta ulang.</li></ul><p><button class="btn" id="again">Main Lagi / Ganti Skenario</button></p></section>`;
+$('#again').onclick=()=>{reset({nik:S.nik,nama:S.nama,sc:S.sc});home()}}
+const AU={ctx:null,on:true,step:0,tm:null};
+function ac(){if(!AU.ctx){const C=window.AudioContext||window.webkitAudioContext;if(!C)return null;AU.ctx=new C()}if(AU.ctx.state==='suspended')AU.ctx.resume();return AU.ctx}
+function tone(f,d,t,v,ty){try{const c=ac();if(!c)return;const o=c.createOscillator(),g=c.createGain(),s=c.currentTime+(t||0);o.type=ty||'sine';o.frequency.value=f;g.gain.setValueAtTime(.0001,s);g.gain.exponentialRampToValueAtTime(v||.15,s+.02);g.gain.exponentialRampToValueAtTime(.0001,s+d);o.connect(g);g.connect(c.destination);o.start(s);o.stop(s+d+.05)}catch(e){}}
+const SFX={click:()=>tone(660,.08,0,.08,'triangle'),ok:()=>[523,659,784].forEach((f,i)=>tone(f,.2,i*.1,.12)),bad:()=>{tone(220,.22,0,.1,'sawtooth');tone(165,.3,.15,.1,'sawtooth')},win:()=>[523,659,784,1047,1319].forEach((f,i)=>tone(f,.28,i*.12,.12))};
+function play(n){if(AU.on&&SFX[n])SFX[n]()}
+const PAT=[523,659,784,659,587,740,880,740],BAS=[131,131,147,147];
+function music(){if(AU.tm||!AU.on)return;if(!ac())return;AU.tm=setInterval(()=>{if(!AU.on)return;const i=AU.step++;tone(PAT[i%8],.22,0,.03,'triangle');if(i%2==0)tone(BAS[(i>>1)%4],.4,0,.045,'sine')},280)}
+document.addEventListener('click',e=>{if(e.target.closest('.chip,.slot,.opt,.vo,.dep,.ph,.btn'))play('click');music()},true);
+$('#mute').onclick=()=>{AU.on=!AU.on;$('#mute').textContent=AU.on?'🔊 Suara: Nyala':'🔇 Suara: Mati';if(AU.on)music()};
+reset();home();
+</script>
+</body>
+</html>
